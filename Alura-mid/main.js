@@ -1,18 +1,25 @@
-const pom = document.querySelector('.tecla_pom');
-const clap = document.querySelector('.tecla_clap');
-const tim = document.querySelector('.tecla_tim');
+function Som (idAudio) {
+    document.querySelector(idAudio).play();
+}
 
-const puff = document.querySelector9('.tecla_puff');
-const splash = document.querySelector('.tecla_splash');
-const toim = document.querySelector('.tecla_toim');
 
-const psh = document.querySelector('.tecla_psh');
-const tic = document.querySelector('.tecla_tic');
-const tom = document.querySelector('.tecla_tom');
 
-pom.addEventListener('click', function pom() {
-    document.querySelector('#som_tecla_pom').play();
-} )
+const teclas = document.querySelectorAll('.tecla'); // "Table" com todas as teclas
 
+let n = 0;
+
+while ( n < 9) {    // Aumenta o valor de n até 9
+    
+    const instrumento = teclas[n].classList[1]; // Busca a segunda classe do elemento e retorna em string
+
+
+    teclas[n].onclick = function () {
+        Som('#som_'+instrumento );
+    }
+    
+    n = n + 1;
+
+    console.log(n);
+}
 
 
